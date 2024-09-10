@@ -1,0 +1,90 @@
+# services:
+#   easyapointments:
+#     image: 'alextselegidis/easyappointments:latest'
+#     environment:
+#       - BASE_URL=http://localhost
+#       - DEBUG_MODE=TRUE
+#       - DB_HOST=mysql
+#       - DB_NAME=easyappointments
+#       - DB_USERNAME=root
+#       - DB_PASSWORD=secret
+#     ports:
+#       - '8085:80'
+#     volumes:
+#       - './html:/var/www/html'
+#   mysql:
+#     image: 'mysql:8.0'
+#     volumes:
+#       - './docker/mysql:/var/lib/mysql'
+#     environment:
+#       - MYSQL_ROOT_PASSWORD=secret
+#       - MYSQL_DATABASE=easyappointments
+
+
+
+# services:
+#   easyapointments:
+#     image: 'alextselegidis/easyappointments:latest'
+#     environment:
+#       - BASE_URL=http://localhost
+#       - DEBUG_MODE=TRUE
+#       - DB_HOST=mysql
+#       - DB_NAME=easyappointments
+#       - DB_USERNAME=root
+#       - DB_PASSWORD=secret
+#     ports:
+#       - '8085:80'
+#     # volumes:
+#     #   - '/home/unikerp/cori_doc/easyappointments/html:/var/www/html'
+
+#   mysql:
+#     image: 'mysql:8.0'
+#     volumes:
+#       - './docker/mysql:/var/lib/mysql'
+#     environment:
+#       - MYSQL_ROOT_PASSWORD=secret
+#       - MYSQL_DATABASE=easyappointments
+
+#   phpmyadmin:
+#     image: 'phpmyadmin/phpmyadmin:latest'
+#     environment:
+#       - PMA_HOST=mysql
+#       - PMA_USER=root
+#       - PMA_PASSWORD=secret
+#     ports:
+#       - '8086:80'
+
+
+
+services:
+  easyapointments:
+    image: 'alextselegidis/easyappointments:latest'
+    environment:
+      - BASE_URL=http://localhost
+      - DEBUG_MODE=TRUE
+      - DB_HOST=mysql
+      - DB_NAME=easyappointments
+      - DB_USERNAME=root
+      - DB_PASSWORD=secret
+    ports:
+      - '8085:80'
+    volumes:
+      - '/home/unikerp/cori_doc/easyappointments/html:/var/www/html'
+
+  mysql:
+    image: 'mysql:8.0'
+    volumes:
+      - './docker/mysql:/var/lib/mysql'
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_DATABASE=easyappointments
+
+  phpmyadmin:
+    image: 'phpmyadmin/phpmyadmin:latest'
+    environment:
+      - PMA_HOST=mysql
+      - PMA_USER=root
+      - PMA_PASSWORD=secret
+    ports:
+      - '8086:80'
+

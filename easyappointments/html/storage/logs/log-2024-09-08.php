@@ -1,0 +1,5 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2024-09-08 10:32:14 --> JSON exception: {"success":false,"message":"Invalid credentials provided, please try again.","trace":[{"file":"\/var\/www\/html\/system\/core\/CodeIgniter.php","line":481,"function":"validate","class":"Login","type":"->","args":[]},{"file":"\/var\/www\/html\/index.php","line":331,"args":["\/var\/www\/html\/system\/core\/CodeIgniter.php"],"function":"require_once"}]}
+ERROR - 2024-09-08 10:33:20 --> JSON exception: {"success":false,"message":"Invalid credentials provided, please try again.","trace":[{"file":"\/var\/www\/html\/system\/core\/CodeIgniter.php","line":481,"function":"validate","class":"Login","type":"->","args":[]},{"file":"\/var\/www\/html\/index.php","line":331,"args":["\/var\/www\/html\/system\/core\/CodeIgniter.php"],"function":"require_once"}]}
+ERROR - 2024-09-08 12:56:04 --> Severity: error --> Exception: syntax error, unexpected end of file /var/www/html/application/language/french/translations_lang.php 496

@@ -1,0 +1,184 @@
+
+
+lien github : https://github.com/alextselegidis/easyappointments-docker/tree/main
+
+bqck-end : http://localhost:8085/index.php/user/login
+	
+	user: Coridigital
+	mot de passe : Coridigital
+
+
+documentation : https://easyappointments.org/docs.html#1.5.0/readme.md
+
+ajout des droits :
+	sudo chown -R www-data:www-data /home/unikerp/cori_doc/easyappointments/html
+	sudo chmod -R 755 /home/unikerp/cori_doc/easyappointments/html
+
+les droits pour l utilisateur unikerp
+
+	sudo chown -R unikerp:unikerp /home/unikerp/cori_doc/easyappointments/html
+	sudo chmod -R 755 /home/unikerp/cori_doc/easyappointments/html
+	
+	
+	
+	
+	
+	
+	================================================================================================================================
+	================================================================================================================================
+	
+	
+	
+	
+	
+	Pour utiliser Font Awesome en local et afficher l'icône WhatsApp, voici les étapes que tu dois suivre :
+1. Télécharger les fichiers Font Awesome :
+
+
+Tu peux télécharger la version complète de Font Awesome en suivant ces étapes :
+
+    Va sur le site officiel de Font Awesome (https://fontawesome.com/) ou directement sur cdnjs pour trouver la version exacte que tu utilises.
+    Télécharge l'archive contenant les fichiers CSS et les polices (fonts).
+
+
+
+
+
+
+
+2. Placer les fichiers dans ton projet :
+
+Après avoir téléchargé les fichiers :
+
+    Place le fichier all.min.css dans ton répertoire assets/css/pages/ comme dans ton exemple.
+    Assure-toi également de placer les polices Font Awesome (le dossier webfonts) dans un emplacement approprié, généralement dans un répertoire comme assets/fonts/.
+    
+    
+    
+
+3. Vérifier les chemins des polices dans le fichier CSS :
+
+Les fichiers CSS Font Awesome référencent les polices dans un répertoire relatif (../webfonts). Si tu changes l'emplacement des polices, tu devras ajuster ces chemins dans le fichier all.min.css.
+
+Dans le fichier all.min.css, cherche les lignes qui ressemblent à :
+
+css
+
+@font-face {
+  font-family: 'Font Awesome 5 Free';
+  src: url('../webfonts/fa-solid-900.eot');
+  /* ... */
+}
+
+Modifie les chemins en fonction de l'endroit où tu as placé les polices, par exemple :
+
+css
+
+@font-face {
+  font-family: 'Font Awesome 5 Free';
+  src: url('/assets/fonts/fa-solid-900.eot');
+  /* ... */
+}
+
+
+
+
+
+
+
+4. Intégrer les fichiers CSS dans ta page :
+
+Maintenant que tu as les fichiers CSS et les polices en local, tu peux les inclure dans ton projet comme ceci :
+
+php
+
+<link rel="stylesheet" type="text/css" href="<?= asset_url('assets/css/pages/all.min.css') ?>">
+
+
+
+
+
+
+
+
+5. Utiliser l'icône WhatsApp :
+
+Après avoir correctement référencé Font Awesome en local, tu pourras utiliser les icônes comme d'habitude dans ton HTML. Par exemple :
+
+html
+
+<i class="fab fa-whatsapp me-2"></i>
+
+Exemple complet en PHP :
+
+php
+
+<?php section('styles'); ?>
+<link rel="stylesheet" type="text/css" href="<?= asset_url('assets/css/pages/all.min.css') ?>">
+<?php end_section('styles'); ?>
+
+<?php section('content'); ?>
+
+<div id="whatsapp-settings-page" class="container backend-page">
+    <div class="row">
+        <div class="col-sm-3 offset-sm-1">
+            <?php component('settings_nav'); ?>
+        </div>
+        <div id="whatsapp-settings" class="col-sm-6">
+            <form>
+                <fieldset>
+                    <div class="d-flex justify-content-between align-items-center border-bottom mb-4 py-2">
+                        <h4 class="text-black-50 mb-0 fw-light">
+                            <?= lang('whatsapp') ?>
+                        </h4>
+
+                        <div>
+                            <a href="<?= site_url('integrations') ?>" class="btn btn-outline-primary me-2">
+                                <i class="fas fa-chevron-left me-2"></i>
+                                <?= lang('back') ?>
+                            </a>
+
+                            <?php if (can('edit', PRIV_SYSTEM_SETTINGS)): ?>
+                                <button type="button" id="save-settings" class="btn btn-primary">
+                                    <i class="fas fa-check-square me-2"></i>
+                                    <?= lang('save') ?>
+                                </button>
+                            <?php endif; ?>
+
+                            <!-- MY code debut -->
+                            <?php if (can('edit', PRIV_SYSTEM_SETTINGS)): ?>
+                                <a href="<?= site_url('integrations') ?>" class="btn btn-outline-primary">
+                                    <i class="fab fa-whatsapp me-2"></i> <!-- Icone WhatsApp ici -->
+                                    <?= lang('send-whatsapp-settings') ?>
+                                </a>
+                            <?php endif; ?>
+                            <!-- My code Fin -->
+                        </div>
+                    
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mb-3">
+                                <label class="form-label" for="google-analytics-code">
+                                    <?= lang('whatsapp_code') ?>
+                                </label>
+                                <input id="whatsapp-code" placeholder="+ Code du pays Numéro de téléphone (ex: +33 6 12 34 56 78)"
+                                       class="form-control" data-field="whatsapp_code">
+                                <div class="form-text text-muted">
+                                    <small>
+                                        <?= lang('whatsapp_code_code_hint') ?>
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <?php slot('after_primary_appointment_fields'); ?>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
+<?php end_section('content'); ?>
