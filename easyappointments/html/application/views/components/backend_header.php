@@ -4,14 +4,19 @@
  *
  * @var string $active_menu
  * @var string $company_logo
+ * @var string $company_name
  */
 ?>
+
 
 <nav id="header" class="navbar navbar-expand-md navbar-dark">
     <div id="header-logo" class="navbar-brand">
         <img src="<?= base_url('assets/img/logo.png') ?>" alt="logo">
-        <h6>EASY!APPOINTMENTS</h6>
-        <small>Online Appointment Scheduler</small>
+        
+        <!-- <h6>EASY!APPOINTMENTS</h6>
+        <small>Online Appointment Scheduler</small> -->
+        <h6>Coridigital Rendez-vous</h6>
+        
     </div>
 
     <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#header-menu">

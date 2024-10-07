@@ -6,6 +6,8 @@
  */
 ?>
 
+
+
 <div id="wizard-frame-2" class="wizard-frame" style="display:none;">
     <div class="frame-container">
 

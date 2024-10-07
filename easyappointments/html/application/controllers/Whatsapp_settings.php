@@ -28,6 +28,9 @@ class Whatsapp_settings extends EA_Controller
         parent::__construct();
 
         $this->load->model('settings_model');
+        $this->load->model('users_model');
+        $this->load->model('appointments_model');
+        $this->load->model('services_model');
 
         $this->load->library('accounts');
     }
@@ -102,4 +105,295 @@ class Whatsapp_settings extends EA_Controller
             json_exception($e);
         }
     }
+
+
+
+    /**
+     * Récupère les clients dans la table "ea_users" dont "id_roles = 3 ".
+     */
+
+    public function getClientsWithRole() {
+        try {
+            $clients = $this->users_model
+                ->query()
+                ->where('id_roles', 3)
+                ->get()
+                ->result_array(); // Utilise result_array pour retourner plusieurs clients
+    
+            if (!empty($clients)) {
+                // Envoyer les résultats au JavaScript sous forme de JSON
+                echo json_encode($clients);
+            } else {
+                // Si aucun client n'est trouvé
+                echo json_encode([]);
+            }
+    
+        } catch (Exception $e) {
+            // Utilise json_exception pour envoyer un message d'erreur au format JSON
+            json_exception($e);
+        }
+    }
+
+    public function getClientsWithRoleAndAppointments($id_users_customer) {
+        try {
+            $clients = $this->users_model
+                ->query()
+                ->where('id_roles', 3)
+                ->where('id', $id_users_customer)
+                ->get()
+                ->result_array(); // Utilise result_array pour retourner plusieurs appointments
+    
+            if (!empty($clients)) {
+                // Envoyer les résultats au JavaScript sous forme de JSON
+                echo json_encode($clients);
+            } else {
+                // Si aucun appointments n'est trouvé
+                echo json_encode([]);
+            }
+    
+        } catch (Exception $e) {
+            // Utilise json_exception pour envoyer un message d'erreur au format JSON
+            json_exception($e);
+        }
+    }
+
+
+    public function getClientsWithRoleAndAppointmentsAndService($id_service) {
+        try {
+            // Requête pour récupérer le service correspondant à l'ID fourni
+            $service = $this->services_model
+                ->query()
+                ->where('id', 1)
+                ->get()
+                ->row_array(); // Utiliser row_array pour obtenir un seul résultat
+            
+            if (!empty($service)) {
+                // Si un service est trouvé, le renvoyer en JSON
+                echo json_encode($service);
+            } else {
+                // Si aucun service n'est trouvé
+                echo json_encode([]);
+            }
+    
+        } catch (Exception $e) {
+            // En cas d'erreur, renvoyer un message d'erreur au format JSON
+            echo json_encode(['error' => $e->getMessage()]);
+        }
+    }
+
+    // public function getClientsWithRoleAndAppointmentsAndRecherche($search) {
+    //     try {
+    //         // Requête pour récupérer les rdv par mot de recherche
+    //         $service = $this->services_model
+    //             ->query()
+    //             ->where('id', 1)
+    //             ->get()
+    //             ->row_array(); // Utiliser row_array pour obtenir un seul résultat
+            
+    //         // if (!empty($service)) {
+    //         //     // Si un service est trouvé, le renvoyer en JSON
+    //         //     echo json_encode($service);
+    //         // } else {
+    //         //     // Si aucun service n'est trouvé
+    //         //     echo json_encode([]);
+    //         // }
+    
+    //     } catch (Exception $e) {
+    //         // En cas d'erreur, renvoyer un message d'erreur au format JSON
+    //         echo json_encode(['error' => $e->getMessage()]);
+    //     }
+    // }
+    
+    
+    public function getClientsWithRoleAndAppointmentsAndDays($date_to_days) {
+        try {
+            // Utiliser la fonction DATE() pour extraire uniquement la date de start_datetime
+            $appointments = $this->appointments_model
+                ->query()
+                ->where("DATE(start_datetime)", $date_to_days) // Comparer la date extraite avec celle passée en paramètre
+                ->get()
+                ->result_array();
+    
+            if (!empty($appointments)) {
+                // Envoyer les résultats au JavaScript sous forme de JSON
+                echo json_encode($appointments);
+            } else {
+                // Si aucun rendez-vous n'est trouvé
+                echo json_encode([]);
+            }
+    
+        } catch (Exception $e) {
+            // Utilise json_exception pour envoyer un message d'erreur au format JSON
+            json_exception($e);
+        }
+    }
+
+    
+    
+    public function getClientsWithRoleAndAppointmentsAndTomorrow($dateTomorrow) {
+        try {
+            // Utiliser la fonction DATE() pour extraire uniquement la date de start_datetime
+            $appointments = $this->appointments_model
+                ->query()
+                ->where("DATE(start_datetime)", $dateTomorrow) // Comparer la date extraite avec celle passée en paramètre
+                ->get()
+                ->result_array();
+    
+            if (!empty($appointments)) {
+                // Envoyer les résultats au JavaScript sous forme de JSON
+                echo json_encode($appointments);
+            } else {
+                // Si aucun rendez-vous n'est trouvé
+                echo json_encode([]);
+            }
+    
+        } catch (Exception $e) {
+            // Utilise json_exception pour envoyer un message d'erreur au format JSON
+            json_exception($e);
+        }
+    }
+    
+    
+    public function getClientsWithRoleAndAppointmentsAndWeek($startOfWeek, $endOfWeek) {
+        try {
+            // Utiliser la méthode BETWEEN pour sélectionner les rendez-vous entre les deux dates
+            $appointments = $this->appointments_model
+                ->query()
+                ->where("DATE(start_datetime) >=", $startOfWeek) // Comparer avec la date de début de la semaine
+                ->where("DATE(start_datetime) <=", $endOfWeek)   // Comparer avec la date de fin de la semaine
+                ->get()
+                ->result_array();
+        
+            if (!empty($appointments)) {
+                // Envoyer les résultats au JavaScript sous forme de JSON
+                echo json_encode($appointments);
+            } else {
+                // Si aucun rendez-vous n'est trouvé
+                echo json_encode([]);
+            }
+        } catch (Exception $e) {
+            // Utilise json_exception pour envoyer un message d'erreur au format JSON
+            json_exception($e);
+        }
+    }
+    
+
+    public function getClientsWithRoleAndAppointmentsAndDate($startDate) {
+        try {
+            // Utiliser la fonction DATE() pour extraire uniquement la date de start_datetime
+            $appointments = $this->appointments_model
+                ->query()
+                ->where("DATE(start_datetime)", $startDate) // Comparer la date extraite avec celle passée en paramètre
+                ->get()
+                ->result_array();
+    
+            if (!empty($appointments)) {
+                // Envoyer les résultats au JavaScript sous forme de JSON
+                echo json_encode($appointments);
+            } else {
+                // Si aucun rendez-vous n'est trouvé
+                echo json_encode([]);
+            }
+    
+        } catch (Exception $e) {
+            // Utilise json_exception pour envoyer un message d'erreur au format JSON
+            json_exception($e);
+        }
+    }
+
+    public function getClientsWithRoleAndAppointmentsAndDates($startDateTime, $endDateTime) {
+        try {
+            // Utiliser la méthode BETWEEN pour sélectionner les rendez-vous entre les deux dates
+            $appointments = $this->appointments_model
+                ->query()
+                ->where("DATE(start_datetime) >=", $startDateTime) // Comparer avec la date de début de la semaine
+                ->where("DATE(start_datetime) <=", $endDateTime)   // Comparer avec la date de fin de la semaine
+                ->get()
+                ->result_array();
+        
+            if (!empty($appointments)) {
+                // Envoyer les résultats au JavaScript sous forme de JSON
+                echo json_encode($appointments);
+            } else {
+                // Si aucun rendez-vous n'est trouvé
+                echo json_encode([]);
+            }
+        } catch (Exception $e) {
+            // Utilise json_exception pour envoyer un message d'erreur au format JSON
+            json_exception($e);
+        }
+    }
+
+  
+    
+
+    public function getClientsWithRoleAndAppointmentsAndMonth($startOfMonth, $endOfMonth) {
+        try {
+            // Utiliser la méthode BETWEEN pour sélectionner les rendez-vous entre les deux dates
+            $appointments = $this->appointments_model
+                ->query()
+                ->where("DATE(start_datetime) >=", $startOfMonth) // Comparer avec la date de début de la semaine
+                ->where("DATE(start_datetime) <=", $endOfMonth)   // Comparer avec la date de fin de la semaine
+                ->get()
+                ->result_array();
+        
+            if (!empty($appointments)) {
+                // Envoyer les résultats au JavaScript sous forme de JSON
+                echo json_encode($appointments);
+            } else {
+                // Si aucun rendez-vous n'est trouvé
+                echo json_encode([]);
+            }
+        } catch (Exception $e) {
+            // Utilise json_exception pour envoyer un message d'erreur au format JSON
+            json_exception($e);
+        }
+    }
+    
+    
+
+
+    /**
+     * Récupère les rendez-vous du client reçu en paramettre ".
+     */
+    
+    // public function getClientWithAppointments($id_client) {
+    //         try {
+    //             // Construire la requête avec une jointure pour un client spécifique
+    //             $client = $this->db->select('ea_users.id, ea_users.first_name, ea_users.last_name, ea_users.phone_number, ea_appointments.appointment_date')
+    //                 ->from('ea_users')
+    //                 ->join('ea_appointments', 'ea_appointments.id_users_customer = ea_users.id', 'left')
+    //                 ->where('ea_users.id_role', 3) // Filtrer les clients
+    //                 ->where('ea_users.id', $id_client) // Filtrer par l'ID du client
+    //                 ->get()
+    //                 ->row_array(); // Retourner un seul résultat
+        
+    //             // Renvoyer les résultats sous forme de JSON
+    //             echo json_encode($client);
+    //         } catch (Exception $e) {
+    //             echo json_encode(['error' => $e->getMessage()]);
+    //         }
+    // }
+
+    public function getAppointments() {
+        try {
+            $appointments = $this->appointments_model 
+                ->query()
+                ->get()
+                ->result_array(); 
+    
+            if (!empty($appointments)) {
+                // Envoyer les résultats au JavaScript sous forme de JSON
+                echo json_encode($appointments);
+            } else {
+                // Si aucun appointment n'est trouvé
+                echo json_encode([]);
+            }
+    
+        } catch (Exception $e) {
+            // Utilise json_exception pour envoyer un message d'erreur au format JSON
+            json_exception($e);
+        }
+    }
+    
 }

@@ -484,3 +484,7 @@ $lang['invalid_credentials_provided'] = 'Invalid credentials provided, please tr
 $lang['calendar_url'] = 'Calendar URL';
 $lang['please_select'] = 'Please Select';
 // End
+
+// My code : Debut 
+$lang['coridigital_site_web']='Web site Coridigital';
+// My code Fin

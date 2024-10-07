@@ -486,10 +486,12 @@ $lang['please_select'] = 'Please Select';
 // End
 
 // My code : Debut 
-$lang['whatsapp']='WhatsApp';
+$lang['whatsapp']='whatsapp';
+$lang['whatsapp_send_message']='Envoyer un message ';
 $lang['whatsapp_info']='WhatsApp permettent d’envoyer des notifications sur votre compte whatssap selon divers événements d’application tels que la date d’un rendez-vous.';
 $lang['whatsapp_configure']='Configurer'; 
 $lang['whatsapp_code']='Votre numéro WhatsApp ';
 $lang['whatsapp_code_code_hint']='Assurez-vous d’utiliser un numéro WhatsApp';
-$lang['send-whatsapp-settings']='whatsapping';
+$lang['send-whatsapp-settings']='whatsapp';
+$lang['coridigital_site_web']='Site web de Coridigital';
 // My code Fin

@@ -1,5 +1,9 @@
 <?php extend('layouts/backend_layout'); ?>
 
+<?php section('styles'); ?>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<?php end_section('styles'); ?>
+
 <?php section('content'); ?>
 
 <div class="container-fluid backend-page" id="customers-page">
@@ -53,6 +57,12 @@
                             <?= lang('delete') ?>
                         </button>
                     <?php endif; ?>
+
+                    <a id="send-whatsapp-settings" href="<?= site_url('whatsapp_send_message') ?>" class="btn btn-primary">
+                        <i class="fab fa-whatsapp me-2"></i>
+                        <?= lang('send-whatsapp-settings') ?>
+                    </a>
+
                 </div>
 
                 <div id="save-cancel-group" style="display:none;">
@@ -63,6 +73,7 @@
                     <button id="cancel-customer" class="btn btn-secondary">
                         <?= lang('cancel') ?>
                     </button>
+                    
                 </div>
 
                 <?php slot('after_page_actions'); ?>

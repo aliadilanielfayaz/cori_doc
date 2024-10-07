@@ -1,9 +1,5 @@
 <?php extend('layouts/backend_layout'); ?>
 
-<?php section('styles'); ?>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<?php end_section('styles'); ?>
-
 <?php section('content'); ?>
 
 <div id="whatsapp-settings-page" class="container backend-page">
@@ -33,14 +29,14 @@
                             <?php endif; ?>
 
                             <!-- MY code debut -->
-                            <?php if (can('edit', PRIV_SYSTEM_SETTINGS)): ?>
-    
-                                <button type="button" id="send-whatsapp-settings" class="btn btn-outline-primary">
-                                    <i class="fab fa-whatsapp me-2 me-2"></i>
-                                    <?= lang('send-whatsapp-settings') ?>
-                                </button>
-                                
-                            <?php endif; ?>
+                            
+                            <a id="send-whatsapp-settings" href="<?= site_url('whatsapp_send_message') ?>" class="btn btn-outline-primary me-2">
+                            <i class="fab fa-whatsapp  me-2"></i>
+                                <?= lang('send-whatsapp-settings') ?>
+                            </a>
+                            
+                            
+                            
                             <!-- My code Fin -->
                         </div>
                     
@@ -74,8 +70,10 @@
 <?php section('scripts'); ?>
 
 <script src="<?= asset_url('assets/js/utils/url.js') ?>"></script>
-
 <script src="<?= asset_url('assets/js/pages/whatsapp_settings.js') ?>"></script>
+
+<script src="<?= asset_url('assets/js/http/google_analytics_settings_http_client.js') ?>"></script>
+<script src="<?= asset_url('assets/js/pages/google_analytics_settings.js') ?>"></script>
 
 <?php end_section('scripts'); ?>
 

@@ -8,11 +8,21 @@
 
 <div id="frame-footer">
     <small>
+        <!-- 
+        My code Debut
         <span class="footer-powered-by small">
             Powered By
             <a href="https://easyappointments.org" target="_blank">Easy!Appointments</a>
+        </span> 
+        -->
+        <span class="footer-powered-by small">
+        Web site : 
+            <a class="backend-link badge bg-primary text-decoration-none px-2" href="https://coridigital.com" target="_blank">Coridigital</a>
         </span>
 
+        <!--
+            My code Fin 
+        -->
         <span class="footer-options">
             <span id="select-language" class="badge bg-secondary">
                 <i class="fas fa-language me-2"></i>

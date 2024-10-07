@@ -1,0 +1,43 @@
+
+TACHE RESTANTS POUR LE WHATSAPP :
+	
+	1=> la traduction de mon code en arabe, anglais, etc
+	
+	2=> la correction (l adaptation) des fichier js  de google_analytics dans whatsapp_setting,js
+	(ajouter le js pour la sauvegarde des donnees lorsqu on clique sur le bontton enregistrer pour saver le numero de tele de l entreprise) 
+	 et whatsapp_setting.php (ajouter ou appeller uniquement ls fichiers js de whatsapp)
+	 
+	 3=> assurer vous que quand on entre sur la page ou il y a les client qu on doit envoyer un message, que l error js indiquant que google_analitis est not found n apparait plus
+	 (normalement si on a bien adapter le code js de google_analitic dans le fichier js de whatapp et qu on bien appelle le js de whtsapp uniquement dans le whatsaap.php 
+	 qui contient bien sur le table des clients)
+	 l error ne devrait plus apparaitre
+	 
+	 4=> corriger l adaptation de l url : http://localhost:8085/index.php/whatsapp_settings  avant qu on clique le boutton whatsapp 
+	 et l url : http://localhost:8085/index.php/whatsapp_settings apres qu on clique l boutton whatsapp.  en fait , apres le clique du boutton whatsapp et qu on essaie de reactualiser la page, on est rediriger vers la page qui montre qu on a pas encore cliquer sur le boutton whatsapp, or on devrait etre sur la meme page qui montre qu on a cliquer sur le boutton whatssap.
+	 
+	 5=> ajouter les boutton "retour" dans la page ou on envoie les messages whatsapp aux client    OK
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	Conclusion
+
+	Pour un usage personnel ou en petite entreprise, Ultramsg est abordable et facile à intégrer. 
+	
+	
+	Pour des solutions d'entreprise plus robustes, Twilio et 360dialog sont des options solides avec plus de flexibilité et de support direct de WhatsApp.

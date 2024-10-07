@@ -150,6 +150,33 @@ $route['api/v1/settings/(:any)']['put'] = 'api/v1/settings_api_v1/update/$1';
 
 $route['api/v1/availabilities']['get'] = 'api/v1/availabilities_api_v1/get';
 
+
+
+
+/* $route['page/whatsapp_settings/getClientsWithRole'] = 'whatsapp_settings/getClientsWithRole'; */
+
+$route['page/whatsapp_settings/getClientsWithRoleAndAppointments/(:num)'] = 'whatsapp_settings/getClientsWithRoleAndAppointments/$1';
+
+$route['page/whatsapp_settings/getClientsWithRoleAndAppointmentsAndService/(:num)'] = 'whatsapp_settings/getClientsWithRoleAndAppointmentsAndService/$1';
+
+// $route['page/whatsapp_settings/getClientsWithRoleAndAppointmentsAndRecherche/(:any)'] = 'whatsapp_settings/getClientsWithRoleAndAppointmentsAndRecherche/$1';
+
+$route['page/whatsapp_settings/getAppointments'] = 'whatsapp_settings/getAppointments'; 
+
+$route['page/whatsapp_settings/whatsapp_settings/getClientsWithRoleAndAppointmentsAndDays/(:any)'] = 'whatsapp_settings/whatsapp_settings/getClientsWithRoleAndAppointmentsAndDays/$1'; 
+
+$route['page/whatsapp_settings/whatsapp_settings/getClientsWithRoleAndAppointmentsAndTomorrow/(:any)'] = 'whatsapp_settings/whatsapp_settings/getClientsWithRoleAndAppointmentsAndTomorrow/$1'; 
+
+$route['page/whatsapp_settings/whatsapp_settings/getClientsWithRoleAndAppointmentsAndWeek/(:any)/(:any)'] = 'whatsapp_settings/whatsapp_settings/getClientsWithRoleAndAppointmentsAndWeek/$1/$2';
+
+$route['page/whatsapp_settings/whatsapp_settings/getClientsWithRoleAndAppointmentsAndDates/(:any)/(:any)'] = 'whatsapp_settings/whatsapp_settings/getClientsWithRoleAndAppointmentsAndDates/$1/$2';
+
+$route['page/whatsapp_settings/whatsapp_settings/getClientsWithRoleAndAppointmentsAndDate/(:any)'] = 'whatsapp_settings/whatsapp_settings/getClientsWithRoleAndAppointmentsAndDates/$1';
+
+$route['page/whatsapp_settings/whatsapp_settings/getClientsWithRoleAndAppointmentsAndMonth/(:any)/(:any)'] = 'whatsapp_settings/whatsapp_settings/getClientsWithRoleAndAppointmentsAndMonth/$1/$2';
+ 
+
+
 /*
 | -------------------------------------------------------------------------
 | CUSTOM ROUTING
