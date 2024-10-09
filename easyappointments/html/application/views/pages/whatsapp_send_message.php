@@ -267,7 +267,6 @@
       // URL pour récupérer les rendez-vous du lendemain
       const urlTomorrow = `whatsapp_settings/getClientsWithRoleAndAppointmentsAndTomorrow/${dateTomorrow}`;
 
-      // const urlDate = `whatsapp_settings/getClientsWithRoleAndAppointmentsAndDate/${dateStart}/${dateEnd}`;
 
       const linksContainer = document.getElementById(
         "appointments-table-container"
@@ -280,138 +279,7 @@
 
       linksContainer.innerHTML = ""; // Vider le conteneur avant d'ajouter le tableau
 
-      // Requête AJAX pour récupérer les rendez-vous
-    //   function loadAppointement(parm_url) {
-    //     fetch(parm_url)
-    //       .then((response) => response.json())
-    //       .then((appointments) => {
-    //         if (appointments.error) {
-    //           linksContainer.textContent =
-    //             "Erreur lors de la récupération des rendez-vous.";
-    //           return;
-    //         }
-
-    //         const table = document.createElement("table");
-    //         table.classList.add(
-    //           "table",
-    //           "table-responsive",
-    //           "table-striped",
-    //           "table-bordered",
-    //           "table-sm",
-    //           "text-center"
-    //         );
-
-    //         const thead = document.createElement("thead");
-    //         const headerRow = document.createElement("tr");
-    //         ["Client", "Jour", "Heures", "Service", "Action"].forEach(
-    //           (text) => {
-    //             const th = document.createElement("th");
-    //             th.textContent = text;
-    //             headerRow.appendChild(th);
-    //           }
-    //         );
-    //         thead.appendChild(headerRow);
-    //         table.appendChild(thead);
-
-    //         const tbody = document.createElement("tbody");
-    //         table.appendChild(tbody);
-
-    //         appointments.forEach((appointment, index) => {
-    //           const url_client = `whatsapp_settings/getClientsWithRoleAndAppointments/${appointment.id_users_customer}`;
-    //           const startDate = formatDateTime(appointment.start_datetime);
-    //           const endDate = formatDateTime(appointment.end_datetime);
-
-    //           const url_service = `whatsapp_settings/getClientsWithRoleAndAppointmentsAndService/${appointment.id_services}`;
-    //           fetch(url_service)
-    //             .then((response) => response.json())
-    //             .then((services) => {
-    //               if (services.error || services.length === 0) {
-    //                 console.error("Erreur lors de la récupération du service.");
-    //                 linksContainer.textContent =
-    //                   "Erreur lors de la récupération du service.";
-    //                 return;
-    //               }
-
-    //               fetch(url_client)
-    //                 .then((response) => response.json())
-    //                 .then((clients) => {
-    //                   if (clients.error || clients.length === 0) {
-    //                     console.error(
-    //                       "Erreur lors de la récupération du client."
-    //                     );
-    //                     linksContainer.textContent =
-    //                       "Erreur lors de la récupération du client.";
-    //                     return;
-    //                   }
-
-    //                   const client = clients[0];
-    //                   const message = `Bonjour, ${client.first_name} ${client.last_name}. Ceci est un rappel de votre rendez-vous du: ${startDate.date} de : ${startDate.time} À ${endDate.time} pour le service : ${services.name}`;
-    //                   const whatsappUrl = `https://web.whatsapp.com/send?phone=${
-    //                     client.phone_number
-    //                   }&text=${encodeURIComponent(message)}`;
-
-    //                   const row = document.createElement("tr");
-    //                   row.setAttribute("data-service-id", services.id);
-    //                   row.setAttribute(
-    //                     "data-status",
-    //                     appointment.status.toLowerCase()
-    //                   ); // Ajout de l'attribut statut
-    //                   row.setAttribute("data-date", startDate.date); // Ajout de l'attribut date
-
-    //                   const clientCell = document.createElement("td");
-    //                   clientCell.textContent = `${client.first_name} ${client.last_name}`;
-    //                   row.appendChild(clientCell);
-
-    //                   const daterdvCell = document.createElement("td");
-    //                   daterdvCell.textContent = startDate.date;
-    //                   row.appendChild(daterdvCell);
-
-    //                   const heureCell = document.createElement("td");
-    //                   heureCell.textContent =
-    //                     "De : " + startDate.time + " À " + endDate.time;
-    //                   row.appendChild(heureCell);
-
-    //                   const servicesCell = document.createElement("td");
-    //                   servicesCell.textContent = services.name;
-    //                   row.appendChild(servicesCell);
-
-    //                   const sendCell = document.createElement("td");
-    //                   const sendButton = document.createElement("button");
-    //                   sendButton.textContent = "Envoyer";
-    //                   sendButton.classList.add("btn", "btn-sm", "btn-success");
-    //                   sendButton.addEventListener("click", function () {
-    //                     window.open(whatsappUrl, "_blank");
-    //                   });
-    //                   sendCell.appendChild(sendButton);
-    //                   row.appendChild(sendCell);
-
-    //                   tbody.appendChild(row);
-    //                 })
-    //                 .catch((error) =>
-    //                   console.error(
-    //                     "Erreur lors de la récupération des clients :",
-    //                     error
-    //                   )
-    //                 );
-    //             })
-    //             .catch((error) =>
-    //               console.error(
-    //                 "Erreur lors de la récupération du service :",
-    //                 error
-    //               )
-    //             );
-    //         });
-
-    //         linksContainer.appendChild(table);
-    //       })
-    //       .catch((error) =>
-    //         console.error(
-    //           "Erreur lors de la récupération des rendez-vous :",
-    //           error
-    //         )
-    //       );
-    //   }
-    
+     
     let currentPage = 1; // Page actuelle
 const itemsPerPage = 5; // Nombre d'éléments par page
 let appointments = []; // Stockage des rendez-vous
@@ -438,6 +306,109 @@ function loadAppointement(parm_url) {
     );
 }
 
+// function displayAppointments() {
+//   linksContainer.innerHTML = ""; // Effacer le contenu précédent
+
+//   const table = document.createElement("table");
+//   table.classList.add(
+//     "table",
+//     "table-responsive",
+//     "table-striped",
+//     "table-bordered",
+//     "table-sm",
+//     "text-center"
+//   );
+
+//   const thead = document.createElement("thead");
+//   const headerRow = document.createElement("tr");
+//   ["Client", "Jour", "Heures", "Service", "Action"].forEach((text) => {
+//     const th = document.createElement("th");
+//     th.textContent = text;
+//     headerRow.appendChild(th);
+//   });
+//   thead.appendChild(headerRow);
+//   table.appendChild(thead);
+
+//   const tbody = document.createElement("tbody");
+//   table.appendChild(tbody);
+
+//   // Calcul des index de la page actuelle
+//   const startIndex = (currentPage - 1) * itemsPerPage;
+//   const endIndex = startIndex + itemsPerPage;
+//   const currentAppointments = appointments.slice(startIndex, endIndex); // Limiter les rendez-vous à la page actuelle
+
+//   currentAppointments.forEach((appointment, index) => {
+//     const url_client = `whatsapp_settings/getClientsWithRoleAndAppointments/${appointment.id_users_customer}`;
+//     const startDate = formatDateTime(appointment.start_datetime);
+//     const endDate = formatDateTime(appointment.end_datetime);
+
+//     const url_service = `whatsapp_settings/getClientsWithRoleAndAppointmentsAndService/${appointment.id_services}`;
+//     fetch(url_service)
+//       .then((response) => response.json())
+//       .then((services) => {
+//         if (services.error || services.length === 0) {
+//           console.error("Erreur lors de la récupération du service.");
+//           linksContainer.textContent = "Erreur lors de la récupération du service.";
+//           return;
+//         }
+
+//         fetch(url_client)
+//           .then((response) => response.json())
+//           .then((clients) => {
+//             if (clients.error || clients.length === 0) {
+//               console.error("Erreur lors de la récupération du client.");
+//               linksContainer.textContent = "Erreur lors de la récupération du client.";
+//               return;
+//             }
+
+//             const client = clients[0];
+//             const message = `Bonjour, ${client.first_name} ${client.last_name}. Ceci est un rappel de votre rendez-vous du: ${startDate.date} de : ${startDate.time} À ${endDate.time} pour le service : ${services.name}`;
+//             const whatsappUrl = `https://web.whatsapp.com/send?phone=${client.phone_number}&text=${encodeURIComponent(message)}`;
+
+//             const row = document.createElement("tr");
+//             row.setAttribute("data-service-id", services.id);
+//             row.setAttribute("data-status", appointment.status.toLowerCase());
+//             row.setAttribute("data-date", startDate.date);
+
+//             const clientCell = document.createElement("td");
+//             clientCell.textContent = `${client.first_name} ${client.last_name}`;
+//             row.appendChild(clientCell);
+
+//             const daterdvCell = document.createElement("td");
+//             daterdvCell.textContent = startDate.date;
+//             row.appendChild(daterdvCell);
+
+//             const heureCell = document.createElement("td");
+//             heureCell.textContent = "De : " + startDate.time + " À " + endDate.time;
+//             row.appendChild(heureCell);
+
+//             const servicesCell = document.createElement("td");
+//             servicesCell.textContent = services.name;
+//             row.appendChild(servicesCell);
+
+//             const sendCell = document.createElement("td");
+//             const sendButton = document.createElement("button");
+//             sendButton.textContent = "Notifier";
+//             sendButton.classList.add("btn", "btn-sm", "btn-success");
+//             sendButton.addEventListener("click", function () {
+//               window.open(whatsappUrl, "_blank");
+//             });
+//             sendCell.appendChild(sendButton);
+//             row.appendChild(sendCell);
+
+//             tbody.appendChild(row);
+//           })
+//           .catch((error) => console.error("Erreur lors de la récupération des clients :", error));
+//       })
+//       .catch((error) => console.error("Erreur lors de la récupération du service :", error));
+//   });
+
+//   linksContainer.appendChild(table);
+
+//   // Mettre à jour l'état des boutons de pagination
+//   updatePaginationButtons();
+// }
+
 function displayAppointments() {
   linksContainer.innerHTML = ""; // Effacer le contenu précédent
 
@@ -453,7 +424,7 @@ function displayAppointments() {
 
   const thead = document.createElement("thead");
   const headerRow = document.createElement("tr");
-  ["Client", "Jour", "Heures", "Service", "Action"].forEach((text) => {
+  ["Client", "Jour", "Heures", "Service","Action"].forEach((text) => {
     const th = document.createElement("th");
     th.textContent = text;
     headerRow.appendChild(th);
@@ -469,7 +440,7 @@ function displayAppointments() {
   const endIndex = startIndex + itemsPerPage;
   const currentAppointments = appointments.slice(startIndex, endIndex); // Limiter les rendez-vous à la page actuelle
 
-  currentAppointments.forEach((appointment, index) => {
+  currentAppointments.forEach((appointment) => {
     const url_client = `whatsapp_settings/getClientsWithRoleAndAppointments/${appointment.id_users_customer}`;
     const startDate = formatDateTime(appointment.start_datetime);
     const endDate = formatDateTime(appointment.end_datetime);
@@ -518,14 +489,36 @@ function displayAppointments() {
             servicesCell.textContent = services.name;
             row.appendChild(servicesCell);
 
+            
             const sendCell = document.createElement("td");
             const sendButton = document.createElement("button");
-            sendButton.textContent = "Envoyer";
+            sendButton.textContent = "Notifier";
             sendButton.classList.add("btn", "btn-sm", "btn-success");
+
+            const activateButton = document.createElement("button");
+            activateButton.textContent = "Activer";
+            activateButton.classList.add("btn", "btn-sm", "btn-danger"); // Changer la classe pour rouge
+            activateButton.style.display = "none"; // Masquer le bouton "Activer" au départ
+
+            // Gérer le clic sur le bouton "Notifier"
             sendButton.addEventListener("click", function () {
               window.open(whatsappUrl, "_blank");
+              sendButton.disabled = true; // Désactive le bouton "Notifier"
+              sendButton.style.display = "none"; // Masquer le bouton "Notifier"
+              activateButton.style.display = "inline-block"; // Afficher le bouton "Activer"
             });
+
+            // Gérer le clic sur le bouton "Activer"
+            activateButton.addEventListener("click", function (event) {
+              event.preventDefault(); // Empêche le rechargement de la page
+              sendButton.disabled = false; // Réactive le bouton "Notifier"
+              sendButton.style.display = "inline-block"; // Afficher le bouton "Notifier"
+              activateButton.style.display = "none"; // Masquer le bouton "Activer"
+              
+            });
+
             sendCell.appendChild(sendButton);
+            sendCell.appendChild(activateButton);
             row.appendChild(sendCell);
 
             tbody.appendChild(row);
@@ -540,6 +533,13 @@ function displayAppointments() {
   // Mettre à jour l'état des boutons de pagination
   updatePaginationButtons();
 }
+
+
+
+
+
+
+
 
 function updatePaginationButtons() {
   const totalPages = Math.ceil(appointments.length / itemsPerPage); // Nombre total de pages
