@@ -878,3 +878,328 @@ ERROR - 2024-10-09 15:28:08 --> Severity: Warning --> foreach() argument must be
 ERROR - 2024-10-09 15:28:08 --> Severity: Warning --> Trying to access array offset on value of type null /var/www/html/application/views/components/appointments_modal.php 179
 ERROR - 2024-10-09 15:28:08 --> Severity: Warning --> foreach() argument must be of type array|object, null given /var/www/html/application/views/components/timezone_dropdown.php 11
 ERROR - 2024-10-09 15:28:08 --> Severity: Warning --> Trying to access array offset on value of type null /var/www/html/application/views/components/unavailabilities_modal.php 68
+ERROR - 2024-10-09 15:40:12 --> Could not find the language line "Les rdv d'aujourd'hui"
+ERROR - 2024-10-09 15:40:12 --> Could not find the language line "Aujourd'hui"
+ERROR - 2024-10-09 15:40:12 --> Could not find the language line "Les rdvs de demain"
+ERROR - 2024-10-09 15:40:12 --> Could not find the language line "Demain"
+ERROR - 2024-10-09 15:40:12 --> Could not find the language line "Les rdvs par date"
+ERROR - 2024-10-09 15:40:12 --> Could not find the language line "Date"
+ERROR - 2024-10-09 15:40:12 --> Severity: Warning --> foreach() argument must be of type array|object, null given /var/www/html/application/views/components/appointments_modal.php 48
+ERROR - 2024-10-09 15:40:12 --> Severity: Warning --> foreach() argument must be of type array|object, null given /var/www/html/application/views/components/appointments_modal.php 99
+ERROR - 2024-10-09 15:40:12 --> Severity: Warning --> foreach() argument must be of type array|object, null given /var/www/html/application/views/components/appointments_modal.php 139
+ERROR - 2024-10-09 15:40:12 --> Severity: Warning --> Trying to access array offset on value of type null /var/www/html/application/views/components/appointments_modal.php 179
+ERROR - 2024-10-09 15:40:12 --> Severity: Warning --> foreach() argument must be of type array|object, null given /var/www/html/application/views/components/timezone_dropdown.php 11
+ERROR - 2024-10-09 15:40:12 --> Severity: Warning --> Trying to access array offset on value of type null /var/www/html/application/views/components/unavailabilities_modal.php 68
+ERROR - 2024-10-09 15:41:02 --> Notifications - Could not email confirmation details of appointment (12) : Email was not sent: Impossible d’envoyer des emails avec la fonction mail() de PHP. Votre serveur ne doit pas être configuré pour pouvoir utiliser cette méthode.<br /><pre>Date: Wed, 9 Oct 2024 15:41:02 +0000
+From: &quot;Coridigital&quot; &lt;support@coridigital.com&gt;
+Return-Path: &lt;support@coridigital.com&gt;
+Reply-To: &lt;support@coridigital.com&gt;
+User-Agent: Easy!Appointments
+X-Sender: support@coridigital.com
+X-Mailer: Easy!Appointments
+X-Priority: 3 (Normal)
+Message-ID: &lt;6706a40e6b793@coridigital.com&gt;
+Mime-Version: 1.0
+Content-Type: multipart/mixed; boundary=&quot;B_ATC_6706a40e6b7bb&quot;
+=?UTF-8?Q?Votre=20rendez-vous=20a=20=C3=A9t=C3=A9=20confirm=C3=A9=20avec?= =?UTF-8?Q?=20succ=C3=A8s.?=
+This is a multi-part message in MIME format.
+Your email application may not support this format.
+
+--B_ATC_6706a40e6b7bb
+Content-Type: multipart/alternative; boundary=&quot;B_ALT_6706a40e6b7b8&quot;
+
+--B_ALT_6706a40e6b7b8
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Coridigital
+
+
+
+
+ Votre rendez-vous a été confirmé avec succès.
+
+
+ Merci de votre prise de rendez-vous avec nous. Vous trouvez ci-joint les
+détails de votre rendez-vous. Si nécessaire, faites les changements
+souhaités en cliquant sur le lien du rendez-vous.
+
+
+ Détails du rendez-vous
+
+
+
+
+ Prestations
+
+ Petit-déjeuner
+
+
+
+ Exécutant
+
+ Jane Doe
+
+
+
+ Début
+
+ 10/10/2024 9:30 am
+
+
+
+ Fin
+
+ 10/10/2024 10:00 am
+
+
+
+
+ Fuseau horaire
+
+ Dakar (+0:00)
+
+
+
+
+ Statut
+
+ Booked
+
+
+
+
+ Description
+
+
+
+
+
+
+
+
+ Informations client
+
+
+
+
+ Nom
+
+ demain demain
+
+
+
+ Email
+
+ demain@gamil.com
+
+
+
+ Numéro de téléphone
+
+ 33333333333333333333
+
+
+
+ Adresse
+
+
+
+
+
+
+ Lien du rendez-vous
+
+
+ http://localhost:8085/index.php/booking/reschedule/xwzLAhdYqHcm
+
+
+
+ Powered by
+
+ Easy!Appointments
+
+ |
+
+ Coridigital
+
+
+--B_ALT_6706a40e6b7b8
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+=0A&lt;html lang=3D&quot;en&quot;&gt;=0A&lt;head&gt;=0A    &lt;title&gt;=0A        D=C3=A9tails du rend=
+ez-vous | Easy!Appointments=0A    &lt;/title&gt;=0A&lt;/head&gt;=0A&lt;body style=3D&quot;font:=
+ 13px arial, helvetica, tahoma;&quot;&gt;=0A=0A&lt;div class=3D&quot;email-container&quot; style=
+=3D&quot;width: 650px; border: 1px solid #eee; margin: 30px auto;&quot;&gt;=0A    &lt;div i=
+d=3D&quot;header&quot; style=3D&quot;background-color: #429a82; height: 45px; padding: 10p=
+x 15px;&quot;&gt;=0A        &lt;strong id=3D&quot;logo&quot; style=3D&quot;color: white; font-size: 2=
+0px; margin-top: 10px; display: inline-block&quot;&gt;=0A            Coridigital   =
+     &lt;/strong&gt;=0A    &lt;/div&gt;=0A=0A    &lt;div id=3D&quot;content&quot; style=3D&quot;padding: =
+10px 15px; min-height: 400px;&quot;&gt;=0A        &lt;h2&gt;=0A            Votre rendez-v=
+ous a =C3=A9t=C3=A9 confirm=C3=A9 avec succ=C3=A8s.        &lt;/h2&gt;=0A=0A     =
+   &lt;p&gt;=0A            Merci de votre prise de rendez-vous avec nous. Vous tr=
+ouvez ci-joint les d=C3=A9tails de votre rendez-vous. Si n=C3=A9cessaire, f=
+aites les changements souhait=C3=A9s en cliquant sur le lien du rendez-vous=
+.        &lt;/p&gt;=0A=0A        &lt;h2&gt;=0A            D=C3=A9tails du rendez-vous  =
+      &lt;/h2&gt;=0A=0A        &lt;table id=3D&quot;appointment-details&quot;&gt;=0A            &lt;=
+tr&gt;=0A                &lt;td class=3D&quot;label&quot; style=3D&quot;padding: 3px;font-weight=
+: bold;&quot;&gt;=0A                    Prestations                &lt;/td&gt;=0A        =
+        &lt;td style=3D&quot;padding: 3px;&quot;&gt;=0A                    Petit-d=C3=A9jeu=
+ner                &lt;/td&gt;=0A            &lt;/tr&gt;=0A            &lt;tr&gt;=0A         =
+       &lt;td class=3D&quot;label&quot; style=3D&quot;padding: 3px;font-weight: bold;&quot;&gt;=0A   =
+                 Ex=C3=A9cutant                &lt;/td&gt;=0A                &lt;td =
+style=3D&quot;padding: 3px;&quot;&gt;=0A                    Jane Doe                &lt;/td=
+&gt;=0A            &lt;/tr&gt;=0A            &lt;tr&gt;=0A                &lt;td class=3D&quot;lab=
+el&quot; style=3D&quot;padding: 3px;font-weight: bold;&quot;&gt;=0A                    D=
+=C3=A9but                &lt;/td&gt;=0A                &lt;td style=3D&quot;padding: 3px;=
+&quot;&gt;=0A                    10/10/2024 9:30 am                &lt;/td&gt;=0A        =
+    &lt;/tr&gt;=0A            &lt;tr&gt;=0A                &lt;td class=3D&quot;label&quot; style=3D=
+&quot;padding: 3px;font-weight: bold;&quot;&gt;=0A                    Fin               =
+ &lt;/td&gt;=0A                &lt;td style=3D&quot;padding: 3px;&quot;&gt;=0A                   =
+ 10/10/2024 10:00 am=0A                &lt;/td&gt;=0A            &lt;/tr&gt;=0A        =
+    &lt;tr&gt;=0A                &lt;td class=3D&quot;label&quot; style=3D&quot;padding: 3px;font-w=
+eight: bold;&quot;&gt;=0A                    Fuseau horaire                &lt;/td&gt;=0A=
+                &lt;td style=3D&quot;padding: 3px;&quot;&gt;=0A                    Dakar (+=
+0:00)                &lt;/td&gt;=0A            &lt;/tr&gt;=0A=0A                       =
+ &lt;tr&gt;=0A                &lt;td class=3D&quot;label&quot; style=3D&quot;padding: 3px;font-weig=
+ht: bold;&quot;&gt;=0A                    Statut                &lt;/td&gt;=0A           =
+     &lt;td style=3D&quot;padding: 3px;&quot;&gt;=0A                    Booked             =
+   &lt;/td&gt;=0A            &lt;/tr&gt;=0A                        =0A            &lt;tr&gt;=
+=0A                &lt;td class=3D&quot;label&quot; style=3D&quot;padding: 3px;font-weight: b=
+old;&quot;&gt;=0A                    Description                &lt;/td&gt;=0A           =
+     &lt;td style=3D&quot;padding: 3px;&quot;&gt;=0A                                    &lt;/t=
+d&gt;=0A            &lt;/tr&gt;=0A=0A            =0A                    &lt;/table&gt;=0A=
+=0A        &lt;h2&gt;=0A            Informations client        &lt;/h2&gt;=0A=0A       =
+ &lt;table id=3D&quot;customer-details&quot;&gt;=0A            &lt;tr&gt;=0A                &lt;td c=
+lass=3D&quot;label&quot; style=3D&quot;padding: 3px;font-weight: bold;&quot;&gt;=0A               =
+     Nom                &lt;/td&gt;=0A                &lt;td style=3D&quot;padding: 3px;&quot;=
+&gt;=0A                    demain demain                &lt;/td&gt;=0A            &lt;/=
+tr&gt;=0A            &lt;tr&gt;=0A                &lt;td class=3D&quot;label&quot; style=3D&quot;paddi=
+ng: 3px;font-weight: bold;&quot;&gt;=0A                    Email                &lt;/t=
+d&gt;=0A                &lt;td style=3D&quot;padding: 3px;&quot;&gt;=0A                    dem=
+ain@gamil.com                &lt;/td&gt;=0A            &lt;/tr&gt;=0A            &lt;tr&gt;=
+=0A                &lt;td class=3D&quot;label&quot; style=3D&quot;padding: 3px;font-weight: b=
+old;&quot;&gt;=0A                    Num=C3=A9ro de t=C3=A9l=C3=A9phone            =
+    &lt;/td&gt;=0A                &lt;td style=3D&quot;padding: 3px;&quot;&gt;=0A                =
+    33333333333333333333                &lt;/td&gt;=0A            &lt;/tr&gt;=0A       =
+     &lt;tr&gt;=0A                &lt;td class=3D&quot;label&quot; style=3D&quot;padding: 3px;font-=
+weight: bold;&quot;&gt;=0A                    Adresse                &lt;/td&gt;=0A      =
+          &lt;td style=3D&quot;padding: 3px;&quot;&gt;=0A                                  =
+  &lt;/td&gt;=0A            &lt;/tr&gt;=0A        &lt;/table&gt;=0A=0A        &lt;h2&gt;=0A        =
+    Lien du rendez-vous        &lt;/h2&gt;=0A=0A        &lt;a href=3D&quot;http://localho=
+st:8085/index.php/booking/reschedule/xwzLAhdYqHcm&quot; style=3D&quot;width: 600px;&quot;&gt;=
+=0A            http://localhost:8085/index.php/booking/reschedule/xwzLAhdYq=
+Hcm        &lt;/a&gt;=0A    &lt;/div&gt;=0A=0A    &lt;div id=3D&quot;footer&quot; style=3D&quot;padding: =
+10px; text-align: center; margin-top: 10px;=0A                border-top: 1=
+px solid #EEE; background: #FAFAFA;&quot;&gt;=0A        Powered by=0A        &lt;a hre=
+f=3D&quot;https://easyappointments.org&quot; style=3D&quot;text-decoration: none;&quot;&gt;=0A    =
+        Easy!Appointments=0A        &lt;/a&gt;=0A        |=0A        &lt;a href=3D&quot;h=
+ttps://coridigital.com/&quot; style=3D&quot;text-decoration: none;&quot;&gt;=0A            Co=
+ridigital        &lt;/a&gt;=0A    &lt;/div&gt;=0A&lt;/div&gt;=0A=0A&lt;/body&gt;=0A&lt;/html&gt;
+
+--B_ALT_6706a40e6b7b8--
+
+
+
+--B_ATC_6706a40e6b7bb
+Content-Type: text/vcalendar; name=&quot;invitation.ics&quot;
+Content-Disposition: attachment;
+Content-Transfer-Encoding: base64
+
+QkVHSU46VkNBTEVOREFSDQpWRVJTSU9OOjIuMA0KUFJPRElEOi0vL0Vhc3lBcHBvaW50bWVudHMv
+L09wZW4gU291cmNlIFdlYiBTY2hlZHVsZXIvL0VODQpDQUxTQ0FMRTpHUkVHT1JJQU4NCk1FVEhP
+RDpQVUJMSVNIDQpCRUdJTjpWVElNRVpPTkUNClRaSUQ6VVRDDQpCRUdJTjpTVEFOREFSRA0KRFRT
+VEFSVDoyMDI0MDEwMVQwMDAwMDANClRaT0ZGU0VUVE86KzAwMDANClRaT0ZGU0VURlJPTTorMDAw
+MA0KRU5EOlNUQU5EQVJEDQpFTkQ6VlRJTUVaT05FDQpCRUdJTjpWRVZFTlQNClVJRDplYS1jMjBh
+ZDRkNzZmZTk3NzU5YWEyN2EwYzk5YmZmNjcxMA0KRFRTVEFSVDoyMDI0MTAxMFQwOTMwMDANCkRU
+RU5EOjIwMjQxMDEwVDEwMDAwMA0KU1RBVFVTOkNPTkZJUk1FRA0KU1VNTUFSWTpQZXRpdC1kw6lq
+ZXVuZXINCkRFU0NSSVBUSU9OOlxuRXjDqWN1dGFudFxuXG5Ob206IEphbmUgRG9lXG5FbWFpbDog
+amFuZUBleGFtcGxlLm9yZ1xuTnUNCiBtw6lybyBkZSB0w6lsw6lwaG9uZTogKzEgKDAwMCkgMDAw
+LTAwMDBcbkFkcmVzc2U6IFxuVmlsbGU6IFxuQ29kZSBwb3N0DQogYWw6IFxuXG5DbGllbnRcblxu
+Tm9tOiBkZW1haW4gZGVtYWluXG5FbWFpbDogZGVtYWluQGdhbWlsLmNvbVxuTnVtw6lybw0KICBk
+ZSB0w6lsw6lwaG9uZTogMzMzMzMzMzMzMzMzMzMzMzMzMzNcbkFkcmVzc2U6IFxuVmlsbGU6IFxu
+Q29kZSBwb3N0YWwNCiA6IFxuXG5Db21tZW50YWlyZXNcblxuDQpEVFNUQU1QOjIwMjQxMDA5VDE1
+NDEwMloNCkFUVEVOREVFO0NVVFlQRT1JTkRJVklEVUFMO1JPTEU9UkVRLVBBUlRJQ0lQQU5UO1BB
+UlRTVEFUPU5FRURTLUFDVElPTjsNCiBSU1ZQPVRSVUU7Q049ZGVtYWluIGRlbWFpbjptYWlsdG86
+ZGVtYWluQGdhbWlsLmNvbQ0KQVRURU5ERUU7Q1VUWVBFPUlORElWSURVQUw7Uk9MRT1SRVEtUEFS
+VElDSVBBTlQ7UEFSVFNUQVQ9QUNDRVBURUQ7UlNWUA0KID1GQUxTRTtDTj1KYW5lIERvZTptYWls
+dG86amFuZUBleGFtcGxlLm9yZw0KT1JHQU5JWkVSO0NOPUphbmUgRG9lOm1haWx0bzpqYW5lQGV4
+YW1wbGUub3JnDQpCRUdJTjpWQUxBUk0NClRSSUdHRVI7VkFMVUU9REFURS1USU1FOjIwMjQxMDEw
+VDA5MTUwMFoNCkFDVElPTjpFTUFJTA0KU1VNTUFSWTpBbGFybSBub3RpZmljYXRpb24NCkRFU0NS
+SVBUSU9OOlRoaXMgaXMgYW4gZXZlbnQgcmVtaW5kZXINCkFUVEVOREVFO0NVVFlQRT1JTkRJVklE
+VUFMO1JPTEU9UkVRLVBBUlRJQ0lQQU5UO1BBUlRTVEFUPU5FRURTLUFDVElPTjsNCiBSU1ZQPVRS
+VUU7Q049ZGVtYWluIGRlbWFpbjptYWlsdG86ZGVtYWluQGdhbWlsLmNvbQ0KRU5EOlZBTEFSTQ0K
+QkVHSU46VkFMQVJNDQpUUklHR0VSO1ZBTFVFPURBVEUtVElNRToyMDI0MTAxMFQwODMwMDBaDQpB
+Q1RJT046RU1BSUwNClNVTU1BUlk6QWxhcm0gbm90aWZpY2F0aW9uDQpERVNDUklQVElPTjpUaGlz
+IGlzIGFuIGV2ZW50IHJlbWluZGVyDQpBVFRFTkRFRTtDVVRZUEU9SU5ESVZJRFVBTDtST0xFPVJF
+US1QQVJUSUNJUEFOVDtQQVJUU1RBVD1ORUVEUy1BQ1RJT047DQogUlNWUD1UUlVFO0NOPWRlbWFp
+biBkZW1haW46bWFpbHRvOmRlbWFpbkBnYW1pbC5jb20NCkVORDpWQUxBUk0NCkVORDpWRVZFTlQN
+CkVORDpWQ0FMRU5EQVINCg==
+
+--B_ATC_6706a40e6b7bb--</pre>
+ERROR - 2024-10-09 15:41:02 --> #0 /var/www/html/application/libraries/Notifications.php(83): Email_messages->send_appointment_saved(Array, Array, Array, Array, Array, 'Votre rendez-vo...', 'Merci de votre ...', 'http://localhos...', 'demain@gamil.co...', 'BEGIN:VCALENDAR...', 'Africa/Dakar')
+#1 /var/www/html/application/controllers/Booking.php(460): Notifications->notify_appointment_saved(Array, Array, Array, Array, Array, false)
+#2 /var/www/html/system/core/CodeIgniter.php(481): Booking->register()
+#3 /var/www/html/index.php(331): require_once('/var/www/html/s...')
+#4 {main}
+ERROR - 2024-10-09 15:41:07 --> Could not find the language line "Les rdv d'aujourd'hui"
+ERROR - 2024-10-09 15:41:07 --> Could not find the language line "Aujourd'hui"
+ERROR - 2024-10-09 15:41:07 --> Could not find the language line "Les rdvs de demain"
+ERROR - 2024-10-09 15:41:07 --> Could not find the language line "Demain"
+ERROR - 2024-10-09 15:41:07 --> Could not find the language line "Les rdvs par date"
+ERROR - 2024-10-09 15:41:07 --> Could not find the language line "Date"
+ERROR - 2024-10-09 15:41:07 --> Severity: Warning --> foreach() argument must be of type array|object, null given /var/www/html/application/views/components/appointments_modal.php 48
+ERROR - 2024-10-09 15:41:07 --> Severity: Warning --> foreach() argument must be of type array|object, null given /var/www/html/application/views/components/appointments_modal.php 99
+ERROR - 2024-10-09 15:41:07 --> Severity: Warning --> foreach() argument must be of type array|object, null given /var/www/html/application/views/components/appointments_modal.php 139
+ERROR - 2024-10-09 15:41:07 --> Severity: Warning --> Trying to access array offset on value of type null /var/www/html/application/views/components/appointments_modal.php 179
+ERROR - 2024-10-09 15:41:07 --> Severity: Warning --> foreach() argument must be of type array|object, null given /var/www/html/application/views/components/timezone_dropdown.php 11
+ERROR - 2024-10-09 15:41:07 --> Severity: Warning --> Trying to access array offset on value of type null /var/www/html/application/views/components/unavailabilities_modal.php 68
+ERROR - 2024-10-09 15:42:40 --> Could not find the language line "Les rdv d'aujourd'hui"
+ERROR - 2024-10-09 15:42:40 --> Could not find the language line "Aujourd'hui"
+ERROR - 2024-10-09 15:42:40 --> Could not find the language line "Les rdvs de demain"
+ERROR - 2024-10-09 15:42:40 --> Could not find the language line "Demain"
+ERROR - 2024-10-09 15:42:40 --> Could not find the language line "Les rdvs par date"
+ERROR - 2024-10-09 15:42:40 --> Could not find the language line "Date"
+ERROR - 2024-10-09 15:42:40 --> Severity: Warning --> foreach() argument must be of type array|object, null given /var/www/html/application/views/components/appointments_modal.php 48
+ERROR - 2024-10-09 15:42:40 --> Severity: Warning --> foreach() argument must be of type array|object, null given /var/www/html/application/views/components/appointments_modal.php 99
+ERROR - 2024-10-09 15:42:40 --> Severity: Warning --> foreach() argument must be of type array|object, null given /var/www/html/application/views/components/appointments_modal.php 139
+ERROR - 2024-10-09 15:42:40 --> Severity: Warning --> Trying to access array offset on value of type null /var/www/html/application/views/components/appointments_modal.php 179
+ERROR - 2024-10-09 15:42:40 --> Severity: Warning --> foreach() argument must be of type array|object, null given /var/www/html/application/views/components/timezone_dropdown.php 11
+ERROR - 2024-10-09 15:42:40 --> Severity: Warning --> Trying to access array offset on value of type null /var/www/html/application/views/components/unavailabilities_modal.php 68
+ERROR - 2024-10-09 19:14:43 --> Could not find the language line "Les rdv d'aujourd'hui"
+ERROR - 2024-10-09 19:14:43 --> Could not find the language line "Aujourd'hui"
+ERROR - 2024-10-09 19:14:43 --> Could not find the language line "Les rdvs de demain"
+ERROR - 2024-10-09 19:14:43 --> Could not find the language line "Demain"
+ERROR - 2024-10-09 19:14:43 --> Could not find the language line "Les rdvs par date"
+ERROR - 2024-10-09 19:14:43 --> Could not find the language line "Date"
+ERROR - 2024-10-09 19:14:43 --> Severity: Warning --> foreach() argument must be of type array|object, null given /var/www/html/application/views/components/appointments_modal.php 48
+ERROR - 2024-10-09 19:14:43 --> Severity: Warning --> foreach() argument must be of type array|object, null given /var/www/html/application/views/components/appointments_modal.php 99
+ERROR - 2024-10-09 19:14:43 --> Severity: Warning --> foreach() argument must be of type array|object, null given /var/www/html/application/views/components/appointments_modal.php 139
+ERROR - 2024-10-09 19:14:43 --> Severity: Warning --> Trying to access array offset on value of type null /var/www/html/application/views/components/appointments_modal.php 179
+ERROR - 2024-10-09 19:14:43 --> Severity: Warning --> foreach() argument must be of type array|object, null given /var/www/html/application/views/components/timezone_dropdown.php 11
+ERROR - 2024-10-09 19:14:43 --> Severity: Warning --> Trying to access array offset on value of type null /var/www/html/application/views/components/unavailabilities_modal.php 68
+ERROR - 2024-10-09 19:15:04 --> Could not find the language line "Les rdv d'aujourd'hui"
+ERROR - 2024-10-09 19:15:04 --> Could not find the language line "Aujourd'hui"
+ERROR - 2024-10-09 19:15:04 --> Could not find the language line "Les rdvs de demain"
+ERROR - 2024-10-09 19:15:04 --> Could not find the language line "Demain"
+ERROR - 2024-10-09 19:15:04 --> Could not find the language line "Les rdvs par date"
+ERROR - 2024-10-09 19:15:04 --> Could not find the language line "Date"
+ERROR - 2024-10-09 19:15:04 --> Severity: Warning --> foreach() argument must be of type array|object, null given /var/www/html/application/views/components/appointments_modal.php 48
+ERROR - 2024-10-09 19:15:04 --> Severity: Warning --> foreach() argument must be of type array|object, null given /var/www/html/application/views/components/appointments_modal.php 99
+ERROR - 2024-10-09 19:15:04 --> Severity: Warning --> foreach() argument must be of type array|object, null given /var/www/html/application/views/components/appointments_modal.php 139
+ERROR - 2024-10-09 19:15:04 --> Severity: Warning --> Trying to access array offset on value of type null /var/www/html/application/views/components/appointments_modal.php 179
+ERROR - 2024-10-09 19:15:04 --> Severity: Warning --> foreach() argument must be of type array|object, null given /var/www/html/application/views/components/timezone_dropdown.php 11
+ERROR - 2024-10-09 19:15:04 --> Severity: Warning --> Trying to access array offset on value of type null /var/www/html/application/views/components/unavailabilities_modal.php 68
+ERROR - 2024-10-09 19:15:26 --> Could not find the language line "Les rdv d'aujourd'hui"
+ERROR - 2024-10-09 19:15:26 --> Could not find the language line "Aujourd'hui"
+ERROR - 2024-10-09 19:15:26 --> Could not find the language line "Les rdvs de demain"
+ERROR - 2024-10-09 19:15:26 --> Could not find the language line "Demain"
+ERROR - 2024-10-09 19:15:26 --> Could not find the language line "Les rdvs par date"
+ERROR - 2024-10-09 19:15:26 --> Could not find the language line "Date"
+ERROR - 2024-10-09 19:15:26 --> Severity: Warning --> foreach() argument must be of type array|object, null given /var/www/html/application/views/components/appointments_modal.php 48
+ERROR - 2024-10-09 19:15:26 --> Severity: Warning --> foreach() argument must be of type array|object, null given /var/www/html/application/views/components/appointments_modal.php 99
+ERROR - 2024-10-09 19:15:26 --> Severity: Warning --> foreach() argument must be of type array|object, null given /var/www/html/application/views/components/appointments_modal.php 139
+ERROR - 2024-10-09 19:15:26 --> Severity: Warning --> Trying to access array offset on value of type null /var/www/html/application/views/components/appointments_modal.php 179
+ERROR - 2024-10-09 19:15:26 --> Severity: Warning --> foreach() argument must be of type array|object, null given /var/www/html/application/views/components/timezone_dropdown.php 11
+ERROR - 2024-10-09 19:15:26 --> Severity: Warning --> Trying to access array offset on value of type null /var/www/html/application/views/components/unavailabilities_modal.php 68
