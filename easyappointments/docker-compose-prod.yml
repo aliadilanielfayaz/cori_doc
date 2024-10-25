@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 # services:
 #   easyapointments:
 #     image: 'alextselegidis/easyappointments:latest'
@@ -20,8 +20,6 @@ version: '3'
 #     environment:
 #       - MYSQL_ROOT_PASSWORD=secret
 #       - MYSQL_DATABASE=easyappointments
-
-
 
 # services:
 #   easyapointments:
@@ -55,49 +53,46 @@ version: '3'
 #     ports:
 #       - '8086:80'
 
-
-
 services:
   easyapointments:
-    image: 'alextselegidis/easyappointments:latest'
+    image: "alextselegidis/easyappointments:latest"
     environment:
-      #- BASE_URL=http://localhost
-      - BASE_URL=http://0.0.0.0
+      - BASE_URL=http://localhost
       - DEBUG_MODE=TRUE
       - DB_HOST=mysql
       - DB_NAME=easyappointments
       - DB_USERNAME=root
       - DB_PASSWORD=secret
     ports:
-      - '8085:80'
+      - "8085:80"
     volumes:
-      - '/home/ubuntu/cori_doc_easyappointments/easyappointments/html:/var/www/html'
+      - "/home/ubuntu/cori_doc_easyappointments/easyappointments/html:/var/www/html"
     networks:
-            nginx-net:
-                ipv4_address: 30.30.30.2
+      nginx-net:
+        ipv4_address: 30.30.30.2
 
   mysql:
-    image: 'mysql:8.0'
+    image: "mysql:8.0"
     volumes:
-      - './docker/mysql:/var/lib/mysql'
+      - "./docker/mysql:/var/lib/mysql"
     environment:
       - MYSQL_ROOT_PASSWORD=secret
       - MYSQL_DATABASE=easyappointments
     networks:
-            nginx-net:
-                ipv4_address: 30.30.30.3
+      nginx-net:
+        ipv4_address: 30.30.30.3
 
   phpmyadmin:
-    image: 'phpmyadmin/phpmyadmin:latest'
+    image: "phpmyadmin/phpmyadmin:latest"
     environment:
       - PMA_HOST=mysql
       - PMA_USER=root
       - PMA_PASSWORD=secret
     ports:
-      - '8086:80'
+      - "8086:80"
     networks:
-            nginx-net:
-                ipv4_address: 30.30.30.4
+      nginx-net:
+        ipv4_address: 30.30.30.4
 
 networks:
   nginx-net:
@@ -105,4 +100,3 @@ networks:
     ipam:
       config:
         - subnet: 30.30.30.0/24
-
