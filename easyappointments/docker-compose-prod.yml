@@ -58,7 +58,7 @@ services:
     image: "alextselegidis/easyappointments:latest"
     environment:
       - BASE_URL=http://localhost
-      - DEBUG_MODE=TRUE
+      #- DEBUG_MODE=TRUE
       - DB_HOST=mysql
       - DB_NAME=easyappointments
       - DB_USERNAME=root
