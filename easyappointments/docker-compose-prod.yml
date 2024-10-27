@@ -57,8 +57,8 @@ services:
   easyapointments:
     image: "alextselegidis/easyappointments:latest"
     environment:
-      #- BASE_URL=http://localhost
-      - BASE_URL=http://appointments.coridigital.com
+      - BASE_URL=http://localhost
+      #- BASE_URL=http://appointments.coridigital.com
       - DEBUG_MODE=TRUE
       - DB_HOST=mysql
       - DB_NAME=easyappointments
