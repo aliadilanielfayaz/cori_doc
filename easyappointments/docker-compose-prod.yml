@@ -57,7 +57,8 @@ services:
   easyapointments:
     image: "alextselegidis/easyappointments:latest"
     environment:
-      - BASE_URL=http://localhost
+      #- BASE_URL=http://localhost
+      - BASE_URL=http://appointments.coridigital.com
       - DEBUG_MODE=TRUE
       - DB_HOST=mysql
       - DB_NAME=easyappointments
@@ -78,6 +79,8 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=secret
       - MYSQL_DATABASE=easyappointments
+    ports:
+      - "3308:3306"
     networks:
       nginx-net:
         ipv4_address: 30.30.30.3
