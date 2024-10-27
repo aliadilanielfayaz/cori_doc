@@ -10,6 +10,7 @@ bqck-end : http://localhost:8085/index.php/user/login
 
 documentation : https://easyappointments.org/docs.html#1.5.0/readme.md
 
+====================================================================================
 ajout des droits :
 	sudo chown -R www-data:www-data /home/unikerp/cori_doc/easyappointments/html
 	sudo chmod -R 755 /home/unikerp/cori_doc/easyappointments/html
@@ -19,8 +20,15 @@ les droits pour l utilisateur unikerp
 	sudo chown -R unikerp:unikerp /home/unikerp/cori_doc/easyappointments/html
 	sudo chmod -R 755 /home/unikerp/cori_doc/easyappointments/html
 	
+======================================== SERVEUR ====================================
+
+
+sudo chown -R www-data:www-data /home/ubuntu/cori_doc_easyappointments/easyappointments/html
+sudo chmod -R 755 /home/ubuntu/cori_doc_easyappointments/easyappointments/html
+
 	
 	
+======================================================================================	
 	
 
 lien de whatsapp api : https://developers.facebook.com/apps/441505642274156/whatsapp-business/wa-dev-console/?business_id=883426276548167
