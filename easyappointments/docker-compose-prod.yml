@@ -108,7 +108,7 @@ services:
   easyapointments:
     image: "alextselegidis/easyappointments:latest"
     environment:
-      - BASE_URL=https://appointments.coridigital.com
+      - BASE_URL=http://appointments.coridigital.com
       #- DEBUG_MODE=TRUE
       - DB_HOST=mysql
       - DB_NAME=easyappointments
@@ -116,8 +116,8 @@ services:
       - DB_PASSWORD=secret
     ports:
       - "8085:80"
-    volumes:
-      - "/home/ubuntu/cori_doc_easyappointments/easyappointments/html:/var/www/html"
+    #volumes:
+      - #"/home/ubuntu/cori_doc_easyappointments/easyappointments/html:/var/www/html"
     
 
   mysql:
